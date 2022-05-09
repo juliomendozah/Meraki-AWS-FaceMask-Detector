@@ -35,7 +35,7 @@ def on_connect(client, userdata, flags, rc):
     print("\n")
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    client.subscribe("/merakimv/Q2GV-ZPNL-HFC7/0")
+    client.subscribe("/merakimv/{MV_Camera_SN}/0")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -44,7 +44,7 @@ def on_message(client, userdata, msg):
 
     payload_dict= json.loads(payload)
 
-    if msg.topic == "/merakimv/Q2GV-ZPNL-HFC7/0":
+    if msg.topic == "/merakimv/{MV_Camera_SN}/0":
         if payload_dict['counts']['person'] > 0:
             print(f"Qty of people detected: {payload_dict['counts']['person']}")
             print("Found a person!!")
