@@ -6,11 +6,11 @@ import requests
 import cv2
 import numpy as np
 
-api_key = '36e70eb5814c44bac7d28654e59a6f353045ca29'
-MV_Camera_SN = "Q2GV-ZPNL-HFC7"
+api_key = #MERAKI API KEY
+MV_Camera_SN = #SERIAL NUMBER
 base_url = f"https://api.meraki.com/api/v1/devices/{MV_Camera_SN}/camera/generateSnapshot"
-aws_api_url = "https://vu0e8wnw9a.execute-api.us-east-1.amazonaws.com/test/detector"#"https://ozkfonvc3b.execute-api.us-east-1.amazonaws.com/prod/detector"
-broker_address = "192.168.100.47"
+aws_api_url = #AWS API GATEWAY URL
+broker_address = #MQTT BROKER IP ADDRESS
 
 def get_rtspurl(cam_serial):
     """
